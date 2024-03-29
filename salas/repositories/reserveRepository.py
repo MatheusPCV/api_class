@@ -11,9 +11,10 @@ def listar_reservas_sala(sala_id):
 def obter_reserva_por_id(reserva_id):
     return reservas_collection.find_one({'_id': ObjectId(reserva_id)})
 
-def criar_reserva(sala_id, data_hora_inicio, data_hora_fim, materia, professor):
-    reserva = {'sala_id': sala_id, 'data_hora_inicio': data_hora_inicio, 'data_hora_fim': data_hora_fim,
-               'materia': materia, 'professor': professor}
+def criar_reserva(sala_id, data_inicio, hora_inicio, data_fim, hora_fim, nome_materia, nome_professor):
+    reserva = {'sala_id': sala_id, 'data_inicio': data_inicio, 'hora_inicio': hora_inicio,
+               'data_fim': data_fim, 'hora_fim': hora_fim, 'nome_materia': nome_materia,
+               'nome_professor': nome_professor}
     result = reservas_collection.insert_one(reserva)
     return result.inserted_id
 
