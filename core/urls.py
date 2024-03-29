@@ -1,22 +1,16 @@
-"""
-URL configuration for core project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
 from django.urls import path
+from salas.views.classView import atualizar_sala_api, listar_salas_api, excluir_sala_api, detalhes_sala_api, criar_sala_api
+from salas.views.reserveView import listar_reservas_sala_api, detalhes_reserva_api, criar_reserva_api, atualizar_reserva_api, excluir_reserva_api
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('salas/', listar_salas_api),
+    path('salas/criar', criar_sala_api),
+    path('salas/<str:sala_id>/', detalhes_sala_api),
+    path('salas/<str:sala_id>/atualizar/', atualizar_sala_api),
+    path('salas/<str:sala_id>/excluir/', excluir_sala_api),
+    path('salas/<str:sala_id>/reservas/', listar_reservas_sala_api),
+    # path('salas/<str:sala_id>/reservas/<str:reserva_id>/', detalhes_reserva_api),
+    path('salas/<str:sala_id>/reservas/criar/', criar_reserva_api),
+    path('salas/<str:sala_id>/reservas/<str:reserva_id>/atualizar/', atualizar_reserva_api),
+    path('salas/<str:sala_id>/reservas/<str:reserva_id>/excluir/', excluir_reserva_api),
 ]
