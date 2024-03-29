@@ -1,3 +1,9 @@
+## Nomes
+
+Lucas Dias Custodio da Silva 
+Matheus Paes de Camargo Vieira 
+Vinicius Antunes Silva 
+
 # API de Controle e Reserva de Salas de Aula
 
 Este projeto consiste em uma API em Django projetada para facilitar o controle e reserva de salas de aula em uma instituição educacional. A API oferece endpoints para gerenciar salas de aula, horários de disponibilidade e reservas de salas de aula.
